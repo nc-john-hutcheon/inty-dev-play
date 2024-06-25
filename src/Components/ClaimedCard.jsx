@@ -1,3 +1,6 @@
+import ResolutionForm from "./ResolutionForm";
+import { useState } from "react";
+
 const ClaimedCard = ({
   pair,
   setClaimedStudents,
@@ -5,6 +8,7 @@ const ClaimedCard = ({
   setStaffData,
 }) => {
   const [student1, student2] = pair.students;
+  const [isShowingResolutionForm, setIsShowingResolutionForm] = useState(false);
   const staff = pair.staff;
   return (
     <>
@@ -17,7 +21,13 @@ const ClaimedCard = ({
           {student1.name} - {staff}
         </h1>
       )}
-      <button>resolve</button>
+      <button
+        onClick={() => {
+          setIsShowingResolutionForm(true);
+        }}
+      >
+        resolve
+      </button>
       <button
         onClick={() => {
           setPriorityStudents((currentPriorityStudents) => {
@@ -54,6 +64,13 @@ const ClaimedCard = ({
       >
         unclaim
       </button>
+      {isShowingResolutionForm && (
+        <ResolutionForm
+          setPriorityStudents={setPriorityStudents}
+          pair={pair}
+          setClaimedStudents={setClaimedStudents}
+        />
+      )}
     </>
   );
 };

@@ -1,4 +1,3 @@
-import ResolutionForm from "../Components/ResolutionForm";
 import ClaimedCard from "../Components/ClaimedCard";
 import staffData from "../data/staff.json";
 import { useState } from "react";
@@ -72,7 +71,6 @@ const ClaimedContainer = ({
           );
         }
       })}
-      <ResolutionForm />
     </>
   );
 };
