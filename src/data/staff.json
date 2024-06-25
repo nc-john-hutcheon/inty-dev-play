@@ -1,11 +1,22 @@
 [
   {
-    "name": "Michael staff"
+    "name": "Michael staff",
+    "claimed_students": []
   },
   {
-    "name": "Harrison staff"
+    "name": "Harrison staff",
+    "claimed_students": []
   },
   {
-    "name": "Aimée staff"
+    "name": "Aimée staff",
+    "claimed_students": []
+  },
+  {
+    "name": "John staff",
+    "claimed_students": []
+  },
+  {
+    "name": "Linda staff",
+    "claimed_students": []
   }
 ]

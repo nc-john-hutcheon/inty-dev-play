@@ -3,6 +3,8 @@ const PriorityCheckInCard = ({
   setClaimedStudents,
   setPriorityStudents,
   priorityStudents,
+  setStaffData,
+  loggedInStaff,
 }) => {
   return (
     <section className="priority-checkin">
@@ -11,14 +13,17 @@ const PriorityCheckInCard = ({
       <h4>{student["last-seen"]}</h4>
       <button
         onClick={() => {
+          let partner = {};
           setClaimedStudents((currentClaimedStudents) => {
-            let partner = {};
             priorityStudents.forEach((priorityStudent) => {
               if (priorityStudent.name === student.partner) {
                 partner = priorityStudent;
               }
             });
-            return [...currentClaimedStudents, [student, partner]];
+            return [
+              ...currentClaimedStudents,
+              { students: [student, partner], staff: loggedInStaff },
+            ];
           });
           setPriorityStudents((currentPriorityStudents) => {
             return currentPriorityStudents.filter((priorityStudent) => {
@@ -26,6 +31,22 @@ const PriorityCheckInCard = ({
                 priorityStudent.name !== student.name &&
                 priorityStudent.name !== student.partner
               );
+            });
+          });
+          setStaffData((currentStaffData) => {
+            return currentStaffData.map((staffMember) => {
+              if (staffMember.name === loggedInStaff) {
+                console.log(staffMember, "staffMember");
+                return {
+                  ...staffMember,
+                  claimed_students: [
+                    ...staffMember.claimed_students,
+                    student,
+                    partner,
+                  ],
+                };
+              }
+              return staffMember;
             });
           });
         }}

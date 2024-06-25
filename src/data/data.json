@@ -19,7 +19,7 @@
     "last-seen": "01-01-2022",
     "current-task": 12,
     "flagged": false,
-    "partner": "Harrison Student"
+    "partner": null
   },
   {
     "name": "John Student",
@@ -27,5 +27,12 @@
     "current-task": 1,
     "flagged": true,
     "partner": "Michael Student"
+  },
+  {
+    "name": "Linda Student",
+    "last-seen": "01-01-2019",
+    "current-task": 3,
+    "flagged": false,
+    "partner": "Harrison Student"
   }
 ]

@@ -5,6 +5,8 @@ const PriorityListContainer = ({
   setClaimedStudents,
   priorityStudents,
   setPriorityStudents,
+  setStaffData,
+  loggedInStaff,
 }) => {
   return (
     <>
@@ -17,6 +19,8 @@ const PriorityListContainer = ({
             setClaimedStudents={setClaimedStudents}
             setPriorityStudents={setPriorityStudents}
             priorityStudents={priorityStudents}
+            setStaffData={setStaffData}
+            loggedInStaff={loggedInStaff}
           />
         );
       })}

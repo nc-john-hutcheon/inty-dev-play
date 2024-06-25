@@ -7,6 +7,10 @@ const ClaimedContainer = ({
   claimedStudents,
   setClaimedStudents,
   setPriorityStudents,
+  setStaffData,
+  loggedInStaff,
+  setLoggedInStaff,
+  staffData,
 }) => {
   const [view, setView] = useState("individual");
 
@@ -34,22 +38,39 @@ const ClaimedContainer = ({
       >
         Completed
       </button>
-      <select>
-        <option>Choose your fighter</option>
+      <select
+        onChange={(event) => {
+          setLoggedInStaff(event.target.value);
+        }}
+      >
+        <option>{loggedInStaff}</option>
         {staffData.map((member) => {
-          return <option>{member.name}</option>;
+          if (member.name !== loggedInStaff) {
+            return <option>{member.name}</option>;
+          }
         })}
       </select>
 
-      <p>hello from claimed container</p>
       {claimedStudents.map((pair) => {
-        return (
-          <ClaimedCard
-            pair={pair}
-            setClaimedStudents={setClaimedStudents}
-            setPriorityStudents={setPriorityStudents}
-          />
-        );
+        if (view === "individual" && pair.staff === loggedInStaff) {
+          return (
+            <ClaimedCard
+              pair={pair}
+              setClaimedStudents={setClaimedStudents}
+              setPriorityStudents={setPriorityStudents}
+              setStaffData={setStaffData}
+            />
+          );
+        } else if (view === "seminar") {
+          return (
+            <ClaimedCard
+              pair={pair}
+              setClaimedStudents={setClaimedStudents}
+              setPriorityStudents={setPriorityStudents}
+              setStaffData={setStaffData}
+            />
+          );
+        }
       })}
       <ResolutionForm />
     </>
