@@ -3,7 +3,11 @@ import ClaimedCard from "../Components/ClaimedCard";
 import staffData from "../data/staff.json";
 import { useState } from "react";
 
-const ClaimedContainer = ({ claimedStudents }) => {
+const ClaimedContainer = ({
+  claimedStudents,
+  setClaimedStudents,
+  setPriorityStudents,
+}) => {
   const [view, setView] = useState("individual");
 
   return (
@@ -39,7 +43,13 @@ const ClaimedContainer = ({ claimedStudents }) => {
 
       <p>hello from claimed container</p>
       {claimedStudents.map((pair) => {
-        return <ClaimedCard pair={pair} />;
+        return (
+          <ClaimedCard
+            pair={pair}
+            setClaimedStudents={setClaimedStudents}
+            setPriorityStudents={setPriorityStudents}
+          />
+        );
       })}
       <ResolutionForm />
     </>

@@ -4,24 +4,28 @@
     "last-seen": "01-01-2002",
     "current-task": 7,
     "flagged": false,
-    "student_id": 1
+    "student_id": 1,
+    "partner": "John Student"
   },
   {
     "name": "Harrison Student",
     "last-seen": "01-01-2004",
     "current-task": 5,
-    "flagged": true
+    "flagged": true,
+    "partner": "Aimée Student"
   },
   {
     "name": "Aimée Student",
     "last-seen": "01-01-2022",
     "current-task": 12,
-    "flagged": false
+    "flagged": false,
+    "partner": "Harrison Student"
   },
   {
     "name": "John Student",
     "last-seen": "01-01-2014",
     "current-task": 1,
-    "flagged": true
+    "flagged": true,
+    "partner": "Michael Student"
   }
 ]

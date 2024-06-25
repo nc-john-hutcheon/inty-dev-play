@@ -1,12 +1,24 @@
-import data from "../data/data.json";
 import PriorityCheckInCard from "./PriorityCheckInCard";
+import { useState } from "react";
 
-const PriorityListContainer = () => {
+const PriorityListContainer = ({
+  setClaimedStudents,
+  priorityStudents,
+  setPriorityStudents,
+}) => {
   return (
     <>
       <h1>Check In Priority</h1>
-      {data.map((student) => {
-        return <PriorityCheckInCard key={student.name} student={student} />;
+      {priorityStudents.map((student) => {
+        return (
+          <PriorityCheckInCard
+            key={student.name}
+            student={student}
+            setClaimedStudents={setClaimedStudents}
+            setPriorityStudents={setPriorityStudents}
+            priorityStudents={priorityStudents}
+          />
+        );
       })}
     </>
   );
