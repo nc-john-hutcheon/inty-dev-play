@@ -30,11 +30,14 @@ button {
   font-size: large;
   border: none;
   padding: 10px 20px;
-  width: 100%;
+  width: 50%;
   text-align: center;
+  display: inline-block;
 }
 
 .lower-priority {
-  align-self: center;
-  width: 50%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

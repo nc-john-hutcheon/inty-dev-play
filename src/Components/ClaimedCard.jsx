@@ -11,6 +11,8 @@ const ClaimedCard = ({
 }) => {
   const [student1, student2] = pair.students;
   const [isShowingResolutionForm, setIsShowingResolutionForm] = useState(false);
+  const [unclaimDisabled, setUnclaimDisabled] = useState(false);
+
   const staff = pair.staff;
   return (
     <div className="claimed-card">
@@ -31,6 +33,7 @@ const ClaimedCard = ({
         resolve
       </button>
       <button
+        disabled={unclaimDisabled}
         onClick={() => {
           setPriorityStudents((currentPriorityStudents) => {
             if (student2.name) {
@@ -68,6 +71,7 @@ const ClaimedCard = ({
       </button>
       {isShowingResolutionForm && (
         <ResolutionForm
+          setUnclaimDisabled={setUnclaimDisabled}
           setPriorityStudents={setPriorityStudents}
           pair={pair}
           setClaimedStudents={setClaimedStudents}

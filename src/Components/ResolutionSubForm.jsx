@@ -4,6 +4,7 @@ export default function ResolutionSubForm({
   setPriorityStudents,
   setIsShowingResolutionForm,
   setResolvedStudents,
+  setUnclaimDisabled,
 }) {
   const [formTextTemp, setFormTextTemp] = useState("");
   const [formText, setFormText] = useState("");
@@ -23,6 +24,7 @@ export default function ResolutionSubForm({
         ];
       });
       setIsShowingResolutionForm(false);
+      setUnclaimDisabled(true);
     }
   }, [formText]);
 

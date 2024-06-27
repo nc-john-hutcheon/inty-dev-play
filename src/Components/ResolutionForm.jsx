@@ -6,6 +6,7 @@ const ResolutionForm = ({
   setPriorityStudents,
   setClaimedStudents,
   setResolvedStudents,
+  setUnclaimDisabled,
 }) => {
   console.log(pair, "resolution form");
   const [student1, student2] = pair.students;
@@ -32,6 +33,7 @@ const ResolutionForm = ({
     <>
       {isShowingResolutionForm1 && (
         <ResolutionSubForm
+          setUnclaimDisabled={setUnclaimDisabled}
           setIsShowingResolutionForm={setIsShowingResolutionForm1}
           student={student1}
           setPriorityStudents={setPriorityStudents}
@@ -40,6 +42,7 @@ const ResolutionForm = ({
       )}
       {isShowingResolutionForm2 && (
         <ResolutionSubForm
+          setUnclaimDisabled={setUnclaimDisabled}
           setIsShowingResolutionForm={setIsShowingResolutionForm2}
           student={student2}
           setPriorityStudents={setPriorityStudents}
