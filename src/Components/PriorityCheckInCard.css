@@ -1,0 +1,40 @@
+.priority-checkin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 1rem;
+  border-style: solid;
+  background-color: #f5f5f5;
+  border-color: red;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: "Roboto", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 1000;
+  color: #000;
+  margin: 0.4rem;
+  font-family: "Roboto", sans-serif;
+}
+
+button {
+  margin: 1rem;
+  background-color: rgb(249, 195, 1);
+  font-weight: 1000;
+  font-size: large;
+  border: none;
+  padding: 10px 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.lower-priority {
+  align-self: center;
+  width: 50%;
+}

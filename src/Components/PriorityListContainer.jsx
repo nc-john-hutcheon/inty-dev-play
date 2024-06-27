@@ -10,7 +10,7 @@ const PriorityListContainer = ({
 }) => {
   return (
     <>
-      <h1>Check In Priority</h1>
+      <h2>Check In Priority</h2>
       {priorityStudents.map((student) => {
         return (
           <PriorityCheckInCard

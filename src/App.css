@@ -1,5 +1,21 @@
-.priority-checkin {
-  background-color: rgb(228, 215, 215);
-  border-style: solid;
-  width: 33%;
+.title {
+  color: red;
+  text-align: center;
+  margin-top: 20px;
+  font-family: "Roboto", sans-serif;
+}
+
+.master-layout {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.div1 {
+  grid-area: 1 / 1 / 2 / 2;
+}
+.div2  {
+  grid-area: 1 / 2 / 2 / 3;
 }

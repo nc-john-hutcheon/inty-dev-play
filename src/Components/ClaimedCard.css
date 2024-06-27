@@ -1,0 +1,14 @@
+.claimed-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 1rem;
+  border-style: solid;
+  background-color: #ece9e9;
+  border-color: red;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: "Roboto", sans-serif;
+}

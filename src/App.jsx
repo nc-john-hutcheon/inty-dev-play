@@ -13,22 +13,29 @@ function App() {
 
   return (
     <>
-      <PriorityListContainer
-        setClaimedStudents={setClaimedStudents}
-        priorityStudents={priorityStudents}
-        setPriorityStudents={setPriorityStudents}
-        setStaffData={setStaffData}
-        loggedInStaff={loggedInStaff}
-      />
-      <ClaimedContainer
-        claimedStudents={claimedStudents}
-        setClaimedStudents={setClaimedStudents}
-        setPriorityStudents={setPriorityStudents}
-        setStaffData={setStaffData}
-        loggedInStaff={loggedInStaff}
-        setLoggedInStaff={setLoggedInStaff}
-        staffData={staffData}
-      />
+      <h1 className="title">Northcoders, Baby!</h1>
+      <div className="master-layout">
+        <div className="div1">
+          <PriorityListContainer
+            setClaimedStudents={setClaimedStudents}
+            priorityStudents={priorityStudents}
+            setPriorityStudents={setPriorityStudents}
+            setStaffData={setStaffData}
+            loggedInStaff={loggedInStaff}
+          />
+        </div>
+        <div className="div2">
+          <ClaimedContainer
+            claimedStudents={claimedStudents}
+            setClaimedStudents={setClaimedStudents}
+            setPriorityStudents={setPriorityStudents}
+            setStaffData={setStaffData}
+            loggedInStaff={loggedInStaff}
+            setLoggedInStaff={setLoggedInStaff}
+            staffData={staffData}
+          />
+        </div>
+      </div>
     </>
   );
 }

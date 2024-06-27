@@ -1,5 +1,6 @@
 import ResolutionForm from "./ResolutionForm";
 import { useState } from "react";
+import "./ClaimedCard.css";
 
 const ClaimedCard = ({
   pair,
@@ -12,7 +13,7 @@ const ClaimedCard = ({
   const [isShowingResolutionForm, setIsShowingResolutionForm] = useState(false);
   const staff = pair.staff;
   return (
-    <>
+    <div className="claimed-card">
       {student2.name ? (
         <h1>
           {student1.name} and {student2.name} - {staff}
@@ -74,7 +75,7 @@ const ClaimedCard = ({
           setResolvedStudents={setResolvedStudents}
         />
       )}
-    </>
+    </div>
   );
 };
 
