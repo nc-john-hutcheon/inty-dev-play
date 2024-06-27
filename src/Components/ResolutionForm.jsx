@@ -1,7 +1,12 @@
 import ResolutionSubForm from "./ResolutionSubForm";
 import { useEffect, useState } from "react";
 
-const ResolutionForm = ({ pair, setPriorityStudents, setClaimedStudents }) => {
+const ResolutionForm = ({
+  pair,
+  setPriorityStudents,
+  setClaimedStudents,
+  setResolvedStudents,
+}) => {
   console.log(pair, "resolution form");
   const [student1, student2] = pair.students;
   const [isShowingResolutionForm1, setIsShowingResolutionForm1] =
@@ -30,6 +35,7 @@ const ResolutionForm = ({ pair, setPriorityStudents, setClaimedStudents }) => {
           setIsShowingResolutionForm={setIsShowingResolutionForm1}
           student={student1}
           setPriorityStudents={setPriorityStudents}
+          setResolvedStudents={setResolvedStudents}
         />
       )}
       {isShowingResolutionForm2 && (
@@ -37,6 +43,7 @@ const ResolutionForm = ({ pair, setPriorityStudents, setClaimedStudents }) => {
           setIsShowingResolutionForm={setIsShowingResolutionForm2}
           student={student2}
           setPriorityStudents={setPriorityStudents}
+          setResolvedStudents={setResolvedStudents}
         />
       )}
     </>

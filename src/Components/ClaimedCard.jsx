@@ -6,6 +6,7 @@ const ClaimedCard = ({
   setClaimedStudents,
   setPriorityStudents,
   setStaffData,
+  setResolvedStudents,
 }) => {
   const [student1, student2] = pair.students;
   const [isShowingResolutionForm, setIsShowingResolutionForm] = useState(false);
@@ -69,6 +70,8 @@ const ClaimedCard = ({
           setPriorityStudents={setPriorityStudents}
           pair={pair}
           setClaimedStudents={setClaimedStudents}
+          setIsShowingResolutionForm={setIsShowingResolutionForm}
+          setResolvedStudents={setResolvedStudents}
         />
       )}
     </>

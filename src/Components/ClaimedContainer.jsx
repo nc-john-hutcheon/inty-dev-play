@@ -12,7 +12,8 @@ const ClaimedContainer = ({
   staffData,
 }) => {
   const [view, setView] = useState("individual");
-
+  const [resolvedStudents, setResolvedStudents] = useState([]);
+  console.log(resolvedStudents, "resolved students");
   return (
     <>
       <h2>Check ins: {view} view</h2>
@@ -50,27 +51,38 @@ const ClaimedContainer = ({
         })}
       </select>
 
-      {claimedStudents.map((pair) => {
-        if (view === "individual" && pair.staff === loggedInStaff) {
-          return (
-            <ClaimedCard
-              pair={pair}
-              setClaimedStudents={setClaimedStudents}
-              setPriorityStudents={setPriorityStudents}
-              setStaffData={setStaffData}
-            />
-          );
-        } else if (view === "seminar") {
-          return (
-            <ClaimedCard
-              pair={pair}
-              setClaimedStudents={setClaimedStudents}
-              setPriorityStudents={setPriorityStudents}
-              setStaffData={setStaffData}
-            />
-          );
-        }
-      })}
+      {view === "completed"
+        ? resolvedStudents.map((resolvedStudent) => {
+            return (
+              <>
+                <p>{resolvedStudent.student.name}</p>
+                <p>{resolvedStudent.comment}</p>
+              </>
+            );
+          })
+        : claimedStudents.map((pair) => {
+            if (view === "individual" && pair.staff === loggedInStaff) {
+              return (
+                <ClaimedCard
+                  pair={pair}
+                  setClaimedStudents={setClaimedStudents}
+                  setPriorityStudents={setPriorityStudents}
+                  setStaffData={setStaffData}
+                  setResolvedStudents={setResolvedStudents}
+                />
+              );
+            } else if (view === "seminar") {
+              return (
+                <ClaimedCard
+                  pair={pair}
+                  setClaimedStudents={setClaimedStudents}
+                  setPriorityStudents={setPriorityStudents}
+                  setStaffData={setStaffData}
+                  setResolvedStudents={setResolvedStudents}
+                />
+              );
+            }
+          })}
     </>
   );
 };
