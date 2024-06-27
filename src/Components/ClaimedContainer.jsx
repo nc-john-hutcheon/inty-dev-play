@@ -1,6 +1,6 @@
 import ClaimedCard from "../Components/ClaimedCard";
-import staffData from "../data/staff.json";
 import { useState } from "react";
+import "./ClaimedContainer.css";
 
 const ClaimedContainer = ({
   claimedStudents,
@@ -13,9 +13,9 @@ const ClaimedContainer = ({
 }) => {
   const [view, setView] = useState("individual");
   const [resolvedStudents, setResolvedStudents] = useState([]);
-  console.log(resolvedStudents, "resolved students");
+
   return (
-    <>
+    <div className="claimed-container">
       <h2>Check ins: {view} view</h2>
       <button
         onClick={() => {
@@ -38,18 +38,20 @@ const ClaimedContainer = ({
       >
         Completed
       </button>
-      <select
-        onChange={(event) => {
-          setLoggedInStaff(event.target.value);
-        }}
-      >
-        <option>{loggedInStaff}</option>
-        {staffData.map((member) => {
-          if (member.name !== loggedInStaff) {
-            return <option>{member.name}</option>;
-          }
-        })}
-      </select>
+      <div className="staff-select">
+        <select
+          onChange={(event) => {
+            setLoggedInStaff(event.target.value);
+          }}
+        >
+          <option>{loggedInStaff}</option>
+          {staffData.map((member) => {
+            if (member.name !== loggedInStaff) {
+              return <option>{member.name}</option>;
+            }
+          })}
+        </select>
+      </div>
 
       {view === "completed"
         ? resolvedStudents.map((resolvedStudent) => {
@@ -83,7 +85,7 @@ const ClaimedContainer = ({
               );
             }
           })}
-    </>
+    </div>
   );
 };
 

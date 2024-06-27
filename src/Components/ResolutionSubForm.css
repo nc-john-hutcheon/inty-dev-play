@@ -1,0 +1,17 @@
+textarea {
+  width: 90%;
+  min-height: 2cm;
+  justify-self: center;
+  margin-left: 0.25cm;
+}
+.resolution-sub-form {
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+}
+
+.sub-form-buttons {
+  width: 100%;
+  display: flex;
+}

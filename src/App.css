@@ -19,3 +19,8 @@
 .div2  {
   grid-area: 1 / 2 / 2 / 3;
 }
+
+button {
+  min-width: 3cm;
+  border-radius: 0.25rem;
+}

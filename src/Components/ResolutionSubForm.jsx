@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./ResolutionSubForm.css";
 export default function ResolutionSubForm({
   student,
   setPriorityStudents,
@@ -29,7 +30,7 @@ export default function ResolutionSubForm({
   }, [formText]);
 
   return (
-    <div>
+    <div className="resolution-sub-form">
       <h2>{student.name}</h2>
       <textarea
         value={formTextTemp}
@@ -37,14 +38,26 @@ export default function ResolutionSubForm({
           setFormTextTemp(e.target.value);
         }}
       ></textarea>
-      <button
-        onClick={() => {
-          setFormText(formTextTemp);
-        }}
-      >
-        Submit
-      </button>
-      <button>Unclaim {student.name}</button>
+      <div className="sub-form-buttons">
+        <button
+          onClick={() => {
+            setFormText(formTextTemp);
+          }}
+        >
+          Submit
+        </button>
+        <button
+          onClick={() => {
+            setPriorityStudents((currentPriorityStudents) => {
+              return [...currentPriorityStudents, student];
+            });
+            setIsShowingResolutionForm(false);
+            setUnclaimDisabled(true);
+          }}
+        >
+          Unclaim
+        </button>
+      </div>
     </div>
   );
 }
